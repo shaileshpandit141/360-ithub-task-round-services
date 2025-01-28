@@ -1,0 +1,9 @@
+# Ignore the . dependency
+.venv
+.ropeproject
+
+# Ignore the backend dependency
+.env
+**/__pycache__
+**/migrations
+db.sqlite3
