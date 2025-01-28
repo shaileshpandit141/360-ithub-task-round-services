@@ -127,14 +127,17 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # EMAIL Configuration Settings
 # ----------------------------
-EMAIL_BACKEND = config("EMAIL_BACKEND", cast=str)
-EMAIL_HOST = config("EMAIL_HOST", cast=str)
-EMAIL_PORT = config("EMAIL_PORT", cast=int)
-EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool, default=True)
-EMAIL_USE_SSL = config("EMAIL_USE_SSL", cast=bool, default=False)
-EMAIL_HOST_USER = config("EMAIL_HOST_USER", cast=str)
-EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", cast=str)
-DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", cast=str, default=EMAIL_HOST_USER)
+try:
+    EMAIL_BACKEND = config("EMAIL_BACKEND", cast=str)
+    EMAIL_HOST = config("EMAIL_HOST", cast=str)
+    EMAIL_PORT = config("EMAIL_PORT", cast=int)
+    EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool, default=True)
+    EMAIL_USE_SSL = config("EMAIL_USE_SSL", cast=bool, default=False)
+    EMAIL_HOST_USER = config("EMAIL_HOST_USER", cast=str)
+    EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", cast=str)
+    DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", cast=str, default=EMAIL_HOST_USER)
+except Exception:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Razorpay API keys Configuration Settings
 # ----------------------------------------
