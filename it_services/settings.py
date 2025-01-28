@@ -30,6 +30,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# User Applications installed here
+# ----------------------------
+INSTALLED_APPS += [
+    "service_app.apps.ServiceAppConfig",
+    "subscription_app.apps.SubscriptionAppConfig"
+]
+
 # Third-party Applications Configuration Settings
 # -----------------------------------------------
 MIDDLEWARE = [
