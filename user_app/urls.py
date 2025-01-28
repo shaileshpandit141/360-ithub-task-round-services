@@ -11,7 +11,7 @@ urlpatterns = [
     path(
         "otp-email-verification/<str:email>/",
         otp_email_verification_view,
-        name="otp_verification"
+        name="otp_email_verification"
     ),
     path("login/", login_view, name="login"),
     path("logout/", logout_view, name="logout"),

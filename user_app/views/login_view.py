@@ -19,6 +19,6 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return redirect("home")
+            return redirect("service_list")
         return render(request, "user_app/login.html", {"error": "Invalid credentials"})
     return render(request, "user_app/login.html")
