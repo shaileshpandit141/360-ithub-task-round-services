@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Subscribe to Service{% endblock %}
+
+{% block content %}
+<div class="container">
+    <a href="{% url 'service_list' %}" class="btn btn-warning mt-3 mb-3">Return Back to all services</a>
+    <h2>Subscribe to {{ service.name }}</h2>
+    <hr>
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ service.image.url }}" class="img-fluid rounded" alt="{{ service.name }}">
+        </div>
+        <div class="col-md-6">
+            <h4 class="mt-4 mb-4">Service Details</h4>
+            <table class="table table-bordered table-striped mt-4">
+                <tbody>
+                    <tr>
+                        <th class="bg-light w-25">Price</th>
+                        <td>₹{{ service.price }}</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-light">Tax</th>
+                        <td>{{ service.tax }}%</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-light">Package</th>
+                        <td>{{ service.package }}</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-light">Totel Amount</th>
+                        <td>₹{{ service.amount }}</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-light">Payment Terms</th>
+                        <td>{{ service.payment_terms }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="mt-4">
+        <h4 class="mt-4 mb-4">Enter Your Address</h4>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Proceed to Payment</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

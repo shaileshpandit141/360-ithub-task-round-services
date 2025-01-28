@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment Success{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h2 class="mt-5 mb-4">Payment Successful!</h2>
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-check-circle text-success fa-4x mb-3"></i>
+                    <h4 class="card-title">Thank you for your payment</h4>
+                    <p class="card-text">Your subscription has been activated successfully.</p>
+
+                    <div class="payment-details mt-4">
+                        <h5>Payment Details:</h5>
+                        <p>Transaction ID: {{ subscription.transaction_id }}</p>
+                        <p>Amount: {{ subscription.amount }}</p>
+                        <p>Status: {{ subscription.payment_status }}</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="{% url 'service_list' %}" class="btn btn-primary">View Other Services</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

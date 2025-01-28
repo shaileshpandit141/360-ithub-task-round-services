@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment Failed{% endblock %}
+
+{% block content %}
+<div class="payment-failure-container">
+    <h1>Payment Failed</h1>
+    {% if error %}
+        <div class="error-message">
+            <p>{{ error }}</p>
+        </div>
+    {% endif %}
+    <div class="failure-details">
+        <p>We're sorry, but your payment could not be processed successfully.</p>
+        <p>Please try again or contact support if the problem persists.</p>
+        <p>{{error}}</p>
+    </div>
+    <div class="action-buttons">
+        <a href="{% url 'service_list' %}" class="btn btn-primary">Return back to all Services</a>
+    </div>
+</div>
+{% endblock %}

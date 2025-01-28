@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment Gateway{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Complete Your Payment</h2>
+    <p>Amount to Pay: ₹{{ amount|floatformat:2 }}</p>
+
+    {% if razorpay_order_id and razorpay_key_id %}
+        <form action="{{ callback_url }}" method="POST">
+            <script
+                src="https://checkout.razorpay.com/v1/checkout.js"
+                data-key="{{ razorpay_key_id }}"    {# Razorpay API Key #}
+                data-amount="{{ amount|floatformat:2|add:'0'|floatformat:0 }}"   {# Amount in rupees #}
+                data-currency="INR"
+                data-order_id="{{ razorpay_order_id }}"   {# Razorpay Order ID #}
+                data-buttontext="Pay Now"
+                data-name="IT Services"
+                data-description="Complete your payment"
+                data-theme.color="#F37254"
+            ></script>
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        </form>
+    {% else %}
+        <p class="text-danger">There was an issue loading the payment gateway. Please try again.</p>
+    {% endif %}
+</div>
+{% endblock %}
