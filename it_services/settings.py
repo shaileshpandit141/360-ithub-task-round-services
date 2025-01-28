@@ -34,7 +34,8 @@ INSTALLED_APPS = [
 # ----------------------------
 INSTALLED_APPS += [
     "service_app.apps.ServiceAppConfig",
-    "subscription_app.apps.SubscriptionAppConfig"
+    "subscription_app.apps.SubscriptionAppConfig",
+    "user_app.apps.UserAppConfig"
 ]
 
 # Third-party Applications Configuration Settings
