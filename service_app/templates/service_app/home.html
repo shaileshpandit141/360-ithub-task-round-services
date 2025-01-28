@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Services</h1>
+<a href="{% url 'create_service' %}" class="btn btn-primary mb-3">Create Service</a>
+<div class="row">
+    {% for service in services %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="position-relative">
+                    <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.name }}" style="height: 200px; object-fit: cover;">
+                    {% if service.is_sold %}
+                        <span class="badge bg-success position-absolute" style="top: 10px; right: 10px;">Active</span>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.name }}</h5>
+                    <p class="card-text">Price: ₹{{ service.price }}</p>
+                    <a href="{% url 'service_detail' service.id %}" class="btn btn-primary">View Details</a>
+                    {% if not service.is_sold %}
+                        <a href="{% url 'subscription' service.id %}" class="btn btn-success">Buy</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
