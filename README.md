@@ -1,6 +1,7 @@
 # **360 IT Hub Task Round (Services Project)**
 
-This is a Django-based web application that provides functionalities for managing services, user subscriptions, and payment integration with Razorpay. It includes CRUD operations for services, user authentication, subscription flows, and secure payment processing.
+This is a Django-based web application that provides functionalities for managing services, user subscriptions, and payment integration with Razorpay.
+It includes CRUD operations for services, user authentication, subscription flows, secure payment processing, and includes test data setup.
 
 ---
 
@@ -29,6 +30,11 @@ This is a Django-based web application that provides functionalities for managin
 
 6. **Environment Variables**:
    - Uses `python-decouple` for secure management of sensitive data in a `.env` file.
+
+7. **Test Data Setup**:
+   - Includes `add_test_data.py` script for populating test data
+   - Creates sample users, services and subscriptions
+   - Useful for testing and development
 
 ---
 
@@ -115,6 +121,15 @@ python manage.py createsuperuser
 ```bash
 python manage.py runserver
 ```
+
+### **8. Add Test Data (Optional)**
+```bash
+python add_test_data.py
+```
+This will populate the database with sample:
+- Services with varying prices and packages
+- Sample subscriptions and transactions
+- Test data useful for development and testing
 
 ## **Usage Instructions**
 
