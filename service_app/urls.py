@@ -1,8 +1,8 @@
 """URL configuration for service app."""
 
 from django.urls import path
-from .views import home_view
+from .views import list_service_view
 
 urlpatterns = [
-    path("", home_view, name="home"),
+    path("", list_service_view, name="list_service"),
 ]

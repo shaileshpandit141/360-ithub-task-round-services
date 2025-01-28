@@ -1,6 +1,6 @@
-from .home_view import home_view
+from .list_service_view import list_service_view
 
 
 __all__ = [
-    "home_view"
+    "list_service_view"
 ]
