@@ -1,7 +1,18 @@
 # **360 IT Hub Task Round (Services Project)**
 
-This is a Django-based web application that provides functionalities for managing services, user subscriptions, and payment integration with Razorpay.
-It includes CRUD operations for services, user authentication, subscription flows, secure payment processing, and includes test data setup.
+This is a Django-based web application that provides functionalities for managing services,
+user subscriptions, and payment integration with Razorpay. It includes CRUD operations for services, 
+user authentication, subscription flows, secure payment processing, and includes test data setup.
+
+---
+
+## **Demo Video**
+
+A recorded demo video showcasing the project functionality is available:
+- **File**: recorded_demo_video.mp4
+- **Contents**: Demonstrates complete user workflow including registration, service browsing,
+subscription process, and payment flow
+- **Duration**: ~5 minutes
 
 ---
 
