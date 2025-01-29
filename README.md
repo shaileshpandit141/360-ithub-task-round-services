@@ -69,7 +69,7 @@ Follow these steps to set up the project locally.
 
 ### **2. Clone the Repository**
 ```bash
-git clone <repository-url>
+git clone https://github.com/shaileshpandit141/360-ithub-task-round-services.git
 cd it_services_task
 ```
 
