@@ -22,4 +22,4 @@ def service_delete_view(request, pk):
         return redirect("service_list")
 
     # Display confirmation page for GET requests
-    return render(request, "service_app/service_delete.html", {"service": service})
+    return render(request, "service_app/service_detail.html", {"service": service})
